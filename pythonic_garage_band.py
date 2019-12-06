@@ -10,7 +10,8 @@ class Musician:
 
     def __str__(self):
 
-        # for some reasons this format displays an error in my console, can't find why
+        # FIX_BUG!!!
+        # for some reasons this format {} displays an error in my console, can't find why
         # return f'I am a {self.role}'
         return ("I am a " + self.role)
 
@@ -53,17 +54,22 @@ class Band:
         self.members = members
         self.__class__.all.append(self)
 
+# ============To DO
+    # def play_solos(self):
+    #     for el in self.members:
+    #         el.play_solo()
 
-#     # def play_solos():
 
 
-#     # def __str__():
+    def __str__():
+        return ("We are the " + self.name)
 
-#     # def __repr__():
+    def __repr__():
+         return ("This is the " + self.name)
 
-#     @classmethod
-#     def to_list(cls):
-#         return all
+    @classmethod
+    def to_list(cls):
+        return cls.all
 
     @staticmethod
     def create_from_data(data):
@@ -82,12 +88,18 @@ class Band:
                 members.append(Guitarist(musician_data[0], musician_data[1]))
             else:
                 members.append(Drummer(musician_data[0], musician_data[1]))
+
+            # FIX_BUG!!!
+            # Can't figure out why I have extra member in the band all the time
             print(members)
             print(el)
         return band_name, members
 
 
+
+
 Band(Band.create_from_data(band_data))
 # Can't figure out why I have extra member in the band all the time
 print(Band.all[0].name)
+
 
