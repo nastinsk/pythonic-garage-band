@@ -30,11 +30,11 @@ def test_drummer_play_solo():
 def test_guitarist_str():
     assert 'I am a Bassist' == Bassist('Bassist', 'bass').__str__()
 
-# def test_musicians_members():
-#     Musician.members = []
-#     guitarist = Guitarist('Guitarist', 'guitar')
-#     bassist = Bassist('Bassist','bass')
-#     drummer = Drummer('Drummer', 'drums')
-#     assert [guitarist, bassist, drummer] == Musician.members
+def test_musicians_members():
+    Musician.members = []
+    guitarist = Guitarist('Guitarist', 'guitar')
+    bassist = Bassist('Bassist','bass')
+    drummer = Drummer('Drummer', 'drums')
+    assert [guitarist, bassist, drummer] == Musician.members
 
 
