@@ -8,14 +8,19 @@ class Musician:
         self.instrument = instrument
         self.__class__.members.append(self)
 
-    # def __str__(self):
-    #     return f'I am a {self.role}'
+    def __str__(self):
 
-    # def __repr__(self):
-    #     return f'This is {self.role}'
+        # for some reasons this format displays an error in my console, can't find why
+        # return f'I am a {self.role}'
+        return ("I am a " + self.role)
 
-    # def play_solo(self):
-    #     return f'{self.role} is playing solo on the {self.instrument}'
+    def __repr__(self):
+        # return f'This is {self.role}'
+        return ("This is a " + self.role)
+
+    def play_solo(self):
+        # return f'{self.role} is playing solo on the {self.instrument}'
+        return (self.role + "is playing solo on the "+ self.instrument)
 
     def get_instrument(self):
         return self.instrument
@@ -43,7 +48,6 @@ class Band:
     all = []
 
 
-
     def __init__(self, name, members=[]):
         self.name = name
         self.members = members
@@ -67,21 +71,23 @@ class Band:
         parsed_data = data.split('\n')
         band_name = parsed_data[0]
 
-        for i in range(1, len(parsed_data)-1):
-            print("new member")
-            musician_data = parsed_data[i].split(",")
-            if musician_data[0] == "Guitarist":
-                members.append(Guitarist(musician_data[0], musician_data[1]))
+        for el in parsed_data[1:len(parsed_data)-1]:
 
+            musician_data = el.split(",")
+            print(el)
             if musician_data[0] == "Bassist":
                 members.append(Bassist(musician_data[0], musician_data[1]))
+
+            if musician_data[0] == "Guitarist":
+                members.append(Guitarist(musician_data[0], musician_data[1]))
             else:
                 members.append(Drummer(musician_data[0], musician_data[1]))
+            print(members)
+            print(el)
+        return band_name, members
 
-        return members
 
-
-
-Band.create_from_data(band_data)
-print(Band.all)
+Band(Band.create_from_data(band_data))
+# Can't figure out why I have extra member in the band all the time
+print(Band.all[0].name)
 
