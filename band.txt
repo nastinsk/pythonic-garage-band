@@ -4,3 +4,4 @@ Drammer, drums
 Drammer, drums
 Drammer, drums
 Bassist, bass
+Guitarist, guitar

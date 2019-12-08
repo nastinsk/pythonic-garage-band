@@ -1,4 +1,4 @@
-from pythonic_garage_band import Musician, Guitarist, Drummer, Bassist
+from pythonic_garage_band import Musician, Guitarist, Drummer, Bassist, Band, read_file
 
 def test_guitarist_role():
     expected = 'Guitarist'
@@ -37,4 +37,5 @@ def test_musicians_members():
     drummer = Drummer('Drummer', 'drums')
     assert [guitarist, bassist, drummer] == Musician.members
 
-
+def test_Band_instance():
+    

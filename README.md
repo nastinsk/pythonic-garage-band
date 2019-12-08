@@ -19,7 +19,7 @@ Program which uses Python classes to model a Band made up of different kinds of 
 
 
 ## API
-1. class Musician: creates instances of the BMusicians
+1. class Musician: creates instances of the Musicians
 2. class Guitarist(Musician):  inherits properties of Musician class
 3. class Bassist(Musician): inherits properties of Musician class
 4. class Drummer(Musician): inherits properties of Musician class
