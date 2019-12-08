@@ -1,6 +1,7 @@
 Random Group
 Guitarist, guitar
-Drammer, drums
-Drammer, drums
-Drammer, drums
+Drummer, drums
+Drummer, drums
+Drummer, drums
 Bassist, bass
+Guitarist, guitar
