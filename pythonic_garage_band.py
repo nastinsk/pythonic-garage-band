@@ -31,7 +31,7 @@ class Musician:
 
 
     def __repr__(self):
-        return f'This is {self.role}'
+        return self.role
 
     def play_solo(self):
         return f'{self.role} is playing solo on the {self.instrument}'
@@ -82,8 +82,10 @@ class Band:
 
 
     def play_solos(self):
-    """Returns string that represents all members of the band playing their solos based on the
-    order they were added to the band"""
+        """
+        Returns string that represents all members of the band playing their solos based on the
+        order they were added to the band
+        """
 
         solos = ''
         for el in self.members:
@@ -99,7 +101,7 @@ class Band:
     def __repr__(self):
         """string with the "name" of the obj instance"""
 
-         return ("This is the " + self.name)
+        return ("This is the " + self.name)
 
     @classmethod
     def to_list(cls):
@@ -109,10 +111,10 @@ class Band:
 
     @staticmethod
     def create_from_data(data):
-    """
-    Returns formatted data from the given data that can be used to create an instance
-    of the Band
-    """
+        """
+        Returns formatted data from the given data that can be used to create an instance
+        of the Band
+        """
 
         members = []
         parsed_data = data.split('\n')
@@ -128,17 +130,20 @@ class Band:
             elif musician_data[0] == "Guitarist":
                 members.append(Guitarist(musician_data[0], musician_data[1]))
 
-            else:
+            elif musician_data[0] == "Drummer":
                 members.append(Drummer(musician_data[0], musician_data[1]))
 
+            else:
+                return f"{musician_data[0]} doesn't exists in DB"
         return [band_name, members]
 
 band_data_formatted = Band.create_from_data(band_data)
 new_band = Band(band_data_formatted[0], band_data_formatted[1])
 new_band2 = Band(band_data_formatted[0], band_data_formatted[1])
 
-print('\n'+ repr(new_band) + '\n')
+print('\n'+ repr(new_band.members) + '\n')
 print(str(new_band) + '\n')
 print(new_band.play_solos() + '\n')
 print(Band.to_list(), '\n')
+
 
